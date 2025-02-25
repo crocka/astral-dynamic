@@ -6,12 +6,14 @@ import Hero from '../components/Hero';
 import Intro from '../components/Intro';
 import Portfolio from '../components/Portfolio';
 import Services from '../components/Services';
+import LineBreak from '../components/LineBreak';
 
 
 const Home = () => {
     return (
         <>
             <Hero />
+            <LineBreak />
             <Intro />
             <Services />
             <Portfolio />

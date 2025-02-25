@@ -1,0 +1,17 @@
+.hero {
+    background-image: url('../images/hero_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Adjust the height as needed */
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    display: flex;
+    flex-direction: column;
+}
+
+.hero > div {
+    flex: 1; /* Ensure the child divs take up the full height */
+}
