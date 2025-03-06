@@ -20,7 +20,9 @@ body {
 }
 
 .cta {
-  background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url('./images/space-bg.jpg') fixed right center;
+  background-position: right center;
+  background-size: cover;
 }
 
 .nav-link {
@@ -44,4 +46,49 @@ body {
 .nav-link:hover::after {
   width: 100%;
   right: 0;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-from-top {
+  animation: slide-in-from-top 0.5s ease-in-out forwards;
+}
+
+.timeline-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.timeline-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.timeline-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    margin: 0 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.timeline-item.selected span {
+    color: var(--theme-color, #6b46c1); /* Default to purple if theme color is not set */
+    font-weight: bold;
+}
+
+.timeline-item.selected div {
+    background-color: var(--theme-color, #6b46c1); /* Default to purple if theme color is not set */
 }
